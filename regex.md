@@ -40,6 +40,7 @@
 
 ### ツール
 - [regex101: build, test, and debug regex](https://regex101.com/)
+- [CyberZHG/toolbox : ](https://cyberzhg.github.io/toolbox/nfa2dfa)
 - [Regexper : 正規表現可視化ツール](https://regexper.com/#%5Cd%2B%E5%B9%B4%5B%5E%E9%96%93%5D)
 - [正規表現チェッカー： PHP、Javascript、Pythonのregexを確認](https://rakko.tools/tools/57/)
 
