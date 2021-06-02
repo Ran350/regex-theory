@@ -93,13 +93,13 @@ RE2エンジンは，厳密に正規表現を決定性有限オートマトン�
 
 ### 繰り返し表現に注意する
 繰り返し表現に関連したパターンにおいてReDoS脆弱性が生じ得るため，特に，量指定子を含む正規表現は避けるべきである．
-しかし，やむを得ず使わざるを得ない場合は，特に次の点に注意することが必要であると考えられる．
+しかし，やむを得ず使う場合は，特に次の点に注意することが必要である．
 - 量指定子がネストされていないことを確認する
 - `|`演算で異なるパスで文字列が真になる入力がないか確認する
 - 繰り返し表現が連結していないか確認する
 
 
-また，曖昧な表現を取り除いてを厳密にする．
+また，曖昧な表現を取り除いて表現を厳密にする．
 - 可視化ツールで確認する
 - 入力文字数を制限して長い文字列で処理させない
 - `*?`や`+?`などの控え目な量指定子を使う（欲張り量指定子は使わない）
@@ -112,15 +112,12 @@ RE2エンジンは，厳密に正規表現を決定性有限オートマトン�
 
 
 ## ReDoS関連ライブラリ
-- [rxxr2](https://github.com/superhuman/rxxr2)
-  - 未レビュー
-- [ReScue](https://2bdenny.github.io/ReScue/)
-  - 未レビュー
 - [@makenowjust-labo/recheck](https://makenowjust-labo.github.io/recheck/)
   - 正規表現の脆弱性解析ができる
   - ScalaとJavaScriptをサポート
   - かなり良さそう
   - [@makenowjust-labo/redos](https://npm.io/package/@makenowjust-labo/redos) は旧リポジトリ名っぽい？(要出典)
+- [@makenowjust-labo/recheck](https://makenowjust-labo.github.io/recheck/)
 - [@makenowjust-labo/eslint-plugin-redos](https://github.com/MakeNowJust-Labo/eslint-plugin-redos)
   - ReDoS脆弱性を検出するESLintプラグイン
   - @makenowjust-labo/redos で解析
@@ -138,6 +135,12 @@ RE2エンジンは，厳密に正規表現を決定性有限オートマトン�
 - [safe-regex-parser](https://github.com/b0uh/safe-regex-parser)
   - .jsファイルの正規表現脆弱性解析ができる
   - 欠点：safe-regex で脆弱性判断している
+- [rxxr2](https://github.com/superhuman/rxxr2)
+  - ソースコードはOCaml製で，実行プログラムはバイナリ形式で配布されている
+  - テキストファイルの一行を読んでReDoS脆弱な正規表現か判定する
+- [ReScue](https://2bdenny.github.io/ReScue/)
+  - ソースコードはJava製で，実行プログラムはjar形式で配布されている
+  - テキストファイルの一行を読んでReDoS脆弱な正規表現か判定する
 
 ## 資料
 - [The Regular Expression Denial of Service (ReDoS) cheat-sheet | by James Davis | Level Up Coding](https://levelup.gitconnected.com/the-regular-expression-denial-of-service-redos-cheat-sheet-a78d0ed7d865)
